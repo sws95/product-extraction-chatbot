@@ -3,7 +3,7 @@
 상품 정보와 리뷰를 LLM으로 정리 및 추출하고, 리뷰를 근거로 답하는 RAG 챗봇입니다.
 데이터는 Amazon Reviews 2023의 화장품(Beauty_and_Personal_Care)과 옷(Clothing_Shoes_and_Jewelry)을 씁니다.
 
-<img src="chat_ui_preview.png" width="560">
+<img src="chat_ui_preview.png">
 
 ## 하는 일
 

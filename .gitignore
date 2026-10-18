@@ -1,0 +1,8 @@
+data/*
+!data/eval/
+.env
+__pycache__/
+*.pyc
+*.zip
+.pytest_cache/
+.claude/settings.local.json

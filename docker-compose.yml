@@ -1,0 +1,61 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    environment:
+      - OLLAMA_NUM_PARALLEL=4        # 요청 4개를 묶어서 동시에 처리 (1.7B면 3070에 여유 있음)
+      - OLLAMA_KEEP_ALIVE=30m        # 모델을 GPU에 오래 올려둬서 매번 다시 올리는 시간 절약
+    volumes: ["ollama:/root/.ollama"]
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 30s
+      retries: 20
+      start_period: 10s
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  # 처음 한 번 모델을 받고 끝나는 컨테이너 (이미 있으면 바로 끝남)
+  ollama-pull:
+    image: ollama/ollama:latest
+    environment: ["OLLAMA_HOST=ollama:11434"]
+    entrypoint: ["ollama", "pull", "${LLM_MODEL:-qwen3:4b-q8_0}"]
+    depends_on:
+      ollama: {condition: service_healthy}
+    restart: "no"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes: ["qdrant:/qdrant/storage"]
+
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+
+  app:
+    build: .
+    env_file: .env
+    environment:          # 컨테이너끼리는 서비스 이름으로 찾는다 (.env 값보다 우선)
+      LLM_BASE_URL: http://ollama:11434
+      QDRANT_URL: http://qdrant:6333
+      REDIS_URL: redis://redis:6379/0
+      RERANK_DEVICE: cpu
+      HF_HOME: /cache/hf
+    volumes:
+      - .:/app                     # 프로젝트 폴더 전체를 그대로 연결 (고쳐도 빌드 불필요)
+      - hf:/cache/hf               # 임베딩, 리랭커 모델 캐시
+    ports: ["8000:8000"]
+    depends_on:
+      ollama: {condition: service_healthy}
+      qdrant: {condition: service_started}
+      redis: {condition: service_started}
+
+volumes:
+  ollama:
+  qdrant:
+  hf:

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose ps:*)",
+      "Bash(docker compose logs:*)",
+      "Bash(docker compose restart app)",
+      "Bash(docker compose up -d)",
+      "Bash(docker compose exec ollama ollama ps)",
+      "Bash(docker compose exec ollama ollama list)",
+      "Bash(docker compose run --rm app python -m scripts.check_all:*)",
+      "Bash(docker compose run --rm app python -m scripts.llm_smoke_test:*)",
+      "Bash(docker compose run --rm app python -m scripts.peek_categories:*)",
+      "Bash(docker compose run --rm app python -m src.index.build_index:*)",
+      "Bash(docker compose run --rm app pytest:*)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(docker compose down:*)",
+      "Bash(docker volume rm:*)",
+      "Bash(rm -rf data:*)",
+      "Bash(docker compose run --rm app python -m src.extract.product_attrs:*)",
+      "Bash(docker compose run --rm app python -m src.extract.review_aspects:*)",
+      "Bash(docker compose run --rm app python -m src.ingest.prepare:*)",
+      "Bash(docker compose run --rm app python -m src.ingest.download:*)"
+    ]
+  }
+}

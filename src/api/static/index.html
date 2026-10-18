@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리뷰로 답하는 쇼핑 상담</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF2F0;        /* 회녹색 바탕 */
+    --paper: #FFFFFF;
+    --ink: #1C2A27;       /* 숲색에 가까운 글자 */
+    --muted: #64746F;
+    --line: #D3DCD8;
+    --forest: #2F6F5E;    /* 버튼, 강조 */
+    --marker: #FFE58A;    /* 근거 형광펜 */
+    --font: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 400 15px/1.65 var(--font); }
+  button, input { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+
+  .app { display: grid; grid-template-columns: minmax(0, 1fr) 340px; grid-template-rows: auto 1fr;
+         height: 100%; max-width: 1180px; margin: 0 auto; }
+  header { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: space-between;
+           padding: 20px 28px 12px; }
+  header h1 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  .ghost { white-space: nowrap; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px;
+           cursor: pointer; font-size: 13px; }
+  .ghost:hover { border-color: var(--forest); color: var(--forest); }
+
+  /* 대화 */
+  .chat { display: flex; flex-direction: column; min-height: 0; padding: 0 28px 20px; }
+  .log { flex: 1; overflow-y: auto; padding: 8px 4px 16px; }
+  .msg { max-width: 640px; margin: 0 0 18px; }
+  .msg.user { margin-left: auto; width: fit-content; background: var(--forest); color: #fff;
+              padding: 9px 14px; border-radius: 14px 14px 4px 14px; }
+  .msg.bot .text { background: var(--paper); border: 1px solid var(--line); padding: 14px 16px;
+                   border-radius: 4px 14px 14px 14px; white-space: pre-wrap; }
+  .cite { border: 0; background: var(--marker); border-radius: 3px; padding: 0 4px; margin: 0 1px;
+          font-size: 12px; font-weight: 600; cursor: pointer; vertical-align: 1px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+  .products { margin-top: 10px; border-top: 1px solid var(--line); }
+  .product { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 2px;
+             border-bottom: 1px solid var(--line); }
+  .product a { color: var(--ink); font-weight: 500; text-decoration: none; }
+  .product a:hover { text-decoration: underline; }
+  .price { color: var(--muted); font-size: 13px; text-align: right; }
+  .reasons { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+  .fb { grid-column: 1 / -1; display: flex; gap: 6px; }
+  .fb button { background: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px;
+               font-size: 12px; cursor: pointer; }
+  .fb button:hover { border-color: var(--forest); }
+  .fb button[disabled] { color: var(--forest); border-color: var(--forest); cursor: default; }
+
+  .empty { max-width: 560px; padding: 32px 4px; }
+  .empty h2 { margin: 0 0 6px; font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  .empty p { margin: 0 0 18px; color: var(--muted); }
+  .suggest { display: flex; flex-wrap: wrap; gap: 8px; }
+  .suggest button { background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
+                    padding: 7px 14px; cursor: pointer; }
+  .suggest button:hover { border-color: var(--forest); }
+
+  form { display: flex; gap: 8px; background: var(--paper); border: 1px solid var(--line);
+         border-radius: 12px; padding: 6px 6px 6px 14px; }
+  form input { flex: 1; border: 0; outline: none; background: none; padding: 8px 0; }
+  form button { background: var(--forest); color: #fff; border: 0; border-radius: 8px; padding: 8px 16px;
+                cursor: pointer; font-weight: 500; }
+  form button:disabled { opacity: .5; cursor: wait; }
+
+  /* 근거 패널 */
+  aside { border-left: 1px solid var(--line); padding: 4px 24px 24px; overflow-y: auto; min-height: 0; }
+  aside h3 { font-size: 13px; font-weight: 600; margin: 14px 0 8px; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px;
+          font-size: 13px; }
+  .chip.off { text-decoration: line-through; color: var(--muted); }
+  .none { color: var(--muted); font-size: 13px; }
+  .review { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+            margin-bottom: 8px; font-size: 13px; transition: background-color .4s; }
+  .review b { margin-right: 6px; }
+  .review.hit { background: var(--marker); border-color: #E8C84A; }
+
+  @media (max-width: 860px) {
+    .app { grid-template-columns: 1fr; grid-template-rows: auto auto auto; height: auto; }
+    header { padding: 16px 16px 8px; gap: 12px; }
+    .chat { padding: 0 16px 16px; }
+    .log { overflow: visible; }
+    aside { padding: 4px 16px 24px; }
+    aside { border-left: 0; border-top: 1px solid var(--line); }
+  }
+  @media (prefers-reduced-motion: reduce) { .review { transition: none; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>리뷰로 답하는 쇼핑 상담</h1>
+      <p>화장품과 옷을 실제 구매자 리뷰를 근거로 추천해요</p>
+    </div>
+    <button class="ghost" id="reset">새 대화</button>
+  </header>
+
+  <main class="chat">
+    <div class="log" id="log" aria-live="polite">
+      <div class="empty" id="empty">
+        <h2>무엇을 찾고 계세요?</h2>
+        <p>원하는 느낌이나 내 상황을 같이 말해주면 더 잘 맞춰드려요.</p>
+        <div class="suggest">
+          <button>추위 많이 타는데 검은 털옷 추천해줘</button>
+          <button>건성인데 향 없는 수분크림 있어?</button>
+          <button>사이즈 작게 나오는 거 말고 넉넉한 후드</button>
+        </div>
+      </div>
+    </div>
+    <form id="form">
+      <input id="input" placeholder="예: 그중에 털 덜 빠지는 걸로" autocomplete="off" aria-label="메시지">
+      <button id="send">보내기</button>
+    </form>
+  </main>
+
+  <aside>
+    <h3>지금 조건</h3>
+    <div class="chips" id="conds"><span class="none">아직 없어요</span></div>
+    <h3>근거 리뷰</h3>
+    <div id="reviews"><span class="none">답변에 인용된 리뷰가 여기 나와요</span></div>
+  </aside>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const log = $("log"), input = $("input"), send = $("send");
+let sid = localStorage.getItem("sid") || newSid();
+const citesByMsg = {};   // 답변마다 자기 근거 리뷰를 따로 기억
+let msgNo = 0;
+
+function newSid() { const s = Math.random().toString(36).slice(2, 10); localStorage.setItem("sid", s); return s; }
+function esc(t) { return String(t ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+const DOMAIN = { clothing: "옷", beauty: "화장품" };
+function label(k, x) {
+  if (k === "domain") return DOMAIN[x] || x;
+  if (k === "max_price") return "$" + x + " 이하";
+  return String(x).replace(/_/g, " ");
+}
+function scrollDown() { log.scrollTop = log.scrollHeight; }
+
+function addUser(text) {
+  $("empty")?.remove();
+  log.insertAdjacentHTML("beforeend", `<div class="msg user">${esc(text)}</div>`);
+  scrollDown();
+}
+
+function addBot(data) {
+  const m = ++msgNo;
+  citesByMsg[m] = data.citations || [];
+  const text = esc(data.answer).replace(/\[(R\d+)\]/g, (_, id) => `<button class="cite" data-id="${id}" data-msg="${m}">${id}</button>`);
+  const items = (data.products || []).map((p, i) => `
+    <div class="product">
+      <a href="https://www.amazon.com/dp/${esc(p.parent_asin)}" target="_blank" rel="noopener">[상품 ${i + 1}] ${esc(p.title)}</a>
+      <span class="price">${p.price != null ? "$" + p.price.toFixed(2) : "가격 정보 없음"}</span>
+      ${p.reasons.length ? `<div class="reasons">${p.reasons.map(esc).join(", ")}</div>` : ""}
+      <div class="fb">
+        <button data-asin="${esc(p.parent_asin)}" data-action="click">관심 있어요</button>
+        <button data-asin="${esc(p.parent_asin)}" data-action="reject">별로예요</button>
+      </div>
+    </div>`).join("");
+  const relaxed = data.relaxed?.length ? `<div class="meta">결과가 적어서 이 조건은 풀고 찾았어요: ${data.relaxed.map(esc).join(", ")}</div>` : "";
+  log.insertAdjacentHTML("beforeend",
+    `<div class="msg bot"><div class="text">${text}</div>${relaxed}${items ? `<div class="products">${items}</div>` : ""}</div>`);
+  scrollDown();
+}
+
+function renderSide(data) {
+  const c = data.conditions || {};
+  const relaxed = new Set(data.relaxed || []);
+  const chips = Object.entries(c).flatMap(([k, v]) =>
+    (Array.isArray(v) ? v : [v]).map(x => `<span class="chip ${relaxed.has(k) ? "off" : ""}">${esc(label(k, x))}</span>`));
+  $("conds").innerHTML = chips.join("") || `<span class="none">아직 없어요</span>`;
+  showReviews(citesByMsg[msgNo] || []);
+}
+
+function showReviews(cites) {
+  $("reviews").innerHTML = cites.length
+    ? cites.map(r => `<div class="review" id="cite-${r.id}"><b>${r.id}</b>${esc(r.text)}${r.text.length >= 300 ? "…" : ""}</div>`).join("")
+    : `<span class="none">이 답변에는 인용된 리뷰가 없어요</span>`;
+}
+
+async function ask(text) {
+  addUser(text);
+  send.disabled = true;
+  const started = Date.now();
+  const wait = document.createElement("div");
+  wait.className = "meta";
+  log.appendChild(wait);
+  const tick = setInterval(() => { wait.textContent = `리뷰를 찾고 답을 쓰고 있어요 (${Math.round((Date.now() - started) / 1000)}초)`; }, 500);
+  try {
+    const res = await fetch("/chat", { method: "POST", headers: { "Content-Type": "application/json" },
+                                       body: JSON.stringify({ session_id: sid, message: text }) });
+    if (!res.ok) throw new Error(`서버 오류 ${res.status}`);
+    const data = await res.json();
+    wait.remove();
+    addBot(data);
+    renderSide(data);
+  } catch (e) {
+    wait.textContent = `답을 받지 못했어요 (${e.message}). docker compose up이 실행 중인지 확인하세요.`;
+  } finally {
+    clearInterval(tick);
+    send.disabled = false;
+    input.focus();
+  }
+}
+
+$("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const t = input.value.trim();
+  if (!t || send.disabled) return;
+  input.value = "";
+  ask(t);
+});
+
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  if (b.closest(".suggest")) return ask(b.textContent);
+  if (b.classList.contains("cite")) {
+    showReviews(citesByMsg[b.dataset.msg] || []);   // 그 답변의 근거 리뷰로 바꿔서 보여줌
+    const el = $("cite-" + b.dataset.id);
+    if (!el) return;
+    document.querySelectorAll(".review.hit").forEach(x => x.classList.remove("hit"));
+    el.classList.add("hit");
+    el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+    return;
+  }
+  if (b.dataset.action) {
+    b.disabled = true;
+    b.textContent = b.dataset.action === "click" ? "관심 표시함" : "별로로 표시함";
+    b.parentElement.querySelectorAll("button").forEach(x => x.disabled = true);
+    fetch("/feedback", { method: "POST", headers: { "Content-Type": "application/json" },
+                         body: JSON.stringify({ session_id: sid, parent_asin: b.dataset.asin, action: b.dataset.action }) });
+  }
+});
+
+$("reset").addEventListener("click", () => { sid = newSid(); location.reload(); });
+input.focus();
+</script>
+</body>
+</html>

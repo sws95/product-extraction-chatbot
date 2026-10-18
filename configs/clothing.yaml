@@ -1,0 +1,127 @@
+domain: clothing
+category_file: Amazon_Fashion
+# 비워두면 카테고리로 거르지 않는다. python -m scripts.peek_categories --domain clothing 로 확인 후 채우기
+include_categories: []
+# Amazon_Fashion은 카테고리가 비어 있어서 제목 단어로 거른다 (대소문자 무시, 하나라도 들어가면 통과)
+include_title_keywords: [jacket, coat, parka, puffer, fleece, sherpa, sweater, cardigan, hoodie, sweatshirt, vest]
+min_reviews: 10           # Amazon_Fashion은 상품당 리뷰가 적어서 낮게
+max_products: 300         # 첫 실행은 작게
+max_reviews_per_product: 20     # 검색 인덱스에 넣는 리뷰 수 (임베딩은 빨라서 넉넉히)
+aspect_reviews_per_product: 8   # 그중 LLM으로 측면을 추출할 리뷰 수 (도움돼요 많은 순). 추출 시간을 좌우한다
+
+product_attributes:
+  item_type:
+    type: enum
+    values: [jacket, coat, vest, sweater, hoodie, dress, top, pants, other]
+  material:
+    type: enum_list
+    values: [wool, fleece, faux_fur, sherpa, cotton, polyester, nylon, spandex, rayon, acrylic, down, leather, denim, knit, other]
+  color:
+    type: enum_list
+    max_items: 4
+    values: [black, white, gray, navy, blue, brown, beige, green, red, pink, purple, yellow, multi]
+  season:
+    type: enum
+    values: [winter, summer, spring_fall, all_season, unknown]
+  fit:
+    type: enum
+    values: [slim, regular, oversized, unknown]
+
+# 근거 확인: LLM이 고른 값이라도 이 단어들이 상품 원문에 하나도 없으면 버린다 (단어 경계로 찾음)
+# 여기 없는 값(other 등)은 확인 없이 둔다
+grounding:
+  color:
+    black: [black]
+    white: [white, ivory, cream]
+    gray: [gray, grey, charcoal, heather, silver]
+    navy: [navy]
+    blue: [blue, denim]
+    brown: [brown, coffee, chocolate, camel, mocha]
+    beige: [beige, khaki, tan, oatmeal, apricot, nude]
+    green: [green, olive, sage, army, mint]
+    red: [red, burgundy, wine, maroon]
+    pink: [pink, rose, blush]
+    purple: [purple, lavender, violet]
+    yellow: [yellow, mustard]
+    multi: [multicolor, multi color, multi-color, color block, colorblock, contrast, contrasting, print, printed, floral, plaid, striped, stripe, camo, tie dye, leopard]
+  material:
+    wool: [wool, merino, cashmere]
+    fleece: [fleece]
+    faux_fur: [faux fur, fur, furry]
+    sherpa: [sherpa]
+    cotton: [cotton]
+    polyester: [polyester]
+    nylon: [nylon]
+    spandex: [spandex, lycra, elastane]
+    rayon: [rayon, viscose]
+    acrylic: [acrylic]
+    down: [down jacket, down coat, down filled, down-filled, duck down, goose down, down fill]
+    leather: [leather]
+    denim: [denim, jean, jeans]
+    knit: [knit, knitted, knitting]
+
+review_aspects: [warmth, sizing, fit, comfort, material_quality, durability, color_accuracy, value]
+
+aspect_labels: {warmth: 보온성, sizing: 사이즈, fit: 핏, comfort: 착용감, material_quality: 소재 품질, durability: 내구성, color_accuracy: 색감, value: 가성비}
+
+# 인덱스에서 뺄 상품 (제목 필터로 들어온 모자, 장갑처럼 옷이 아닌 것)
+index_exclude: {item_type: [other]}
+# 종류 추출로 못 거르는 것 (선택지에 없어서 coat 등으로 잘못 분류되는 상품)
+index_exclude_title: [robe, bathrobe, pajama, pajamas, sleepwear, nightgown, costume, cosplay, cape, shawl, poncho, wrap, blanket, bolero, balaclava]
+
+# 메시지에 이 단어가 있으면 코드가 종류(item_type) 조건을 직접 넣는다 (모델이 놓쳐도 적용)
+item_type_keywords:
+  털옷: [jacket, coat, vest, sweater, hoodie]
+  따뜻한 옷: [jacket, coat, vest, sweater, hoodie]
+  겨울옷: [jacket, coat, vest, sweater, hoodie]
+  아우터: [jacket, coat, vest]
+  패딩: [jacket, coat]
+  점퍼: [jacket]
+  재킷: [jacket]
+  자켓: [jacket]
+  코트: [coat]
+  조끼: [vest]
+  베스트: [vest]
+  니트: [sweater]
+  스웨터: [sweater]
+  카디건: [sweater]
+  가디건: [sweater]
+  후드: [hoodie]
+  맨투맨: [sweater, hoodie]
+
+# 메시지에 이 단어가 있으면 코드가 소재(material) 조건을 직접 넣는다
+# "털 덜 빠지는"의 "털"을 소재로 착각하지 않게, 옷을 가리키는 말만 적는다
+material_keywords:
+  털옷: [fleece, faux_fur, sherpa, wool]
+  털 옷: [fleece, faux_fur, sherpa, wool]
+  털 안감: [fleece, faux_fur, sherpa]
+  털안감: [fleece, faux_fur, sherpa]
+  털 달린: [faux_fur, sherpa]
+  기모: [fleece]
+  플리스: [fleece]
+  후리스: [fleece]
+  양털: [sherpa, wool]
+  뽀글이: [sherpa]
+  퍼: [faux_fur]
+  울: [wool]
+
+# 메시지에 이 말이 있으면 코드가 측면(aspect)을 직접 넣는다
+aspect_keywords:
+  따뜻: warmth
+  보온: warmth
+  추위: warmth
+  사이즈: sizing
+  작게 나: sizing
+  크게 나: sizing
+  핏: fit
+  편한: comfort
+  편안: comfort
+  착용감: comfort
+  소재: material_quality
+  내구: durability
+  오래 입: durability
+  색감: color_accuracy
+  가성비: value
+
+filter_fields: [item_type, color, material, season]
+relax_order: [season, material, color, item_type]

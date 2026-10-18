@@ -1,0 +1,1020 @@
+{
+ "about": "반대 판정 평가 세트. 리뷰 측면 추출 라벨에서 뽑은 구절 145개를 Claude가 직접 다시 라벨링 (2026-10-08, 사람 검수 아님). label: against(원하는 점과 반대되는 문제를 말함) / supports / unrelated / skip(애매해서 평가 제외). extract_label은 원래 측면 추출 라벨인데 털 빠짐 쪽은 배송(shipping)을 shedding으로 붙이는 등 대부분 틀렸다.",
+ "items": [
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Shipping was fast!",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "it arrived quickly",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "These boots are great. Arrived in a timely manner.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Linda chaqueta llego antes de lo esperado.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "It has a two way zipper at bottom for a reason.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "shipping time as expected",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "came earlier than expected",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "I actually received my product a day before I expected it.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Kept me hair free and dry",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Not slouchy but a good shirt.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the rain I did experience was shed without a problem",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "It shipped fairly quickly and packaged well.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Fast shipping, great product",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "its nice and soft",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "I've had it for about a week in the rain each time and on my motorcycle in the rain and haven't felt a drop.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "pet hair doesn't stick to them like traditional cotton leggings",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "came on time on a Sunday",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Shipped from China, but the package is nice, no damage or anything like that.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Feathers are coming out of seems. Very odd looking.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Missing belt. There’s nowhere to email seller",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Cut hairs does not cling",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "The drawstrings on the hood could be better quality but over all worth the money.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "It is a bit see through",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "I do feel they shouldnt be labeled 'leggings' as they are more like tights",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "It's kinda bulky and fits oddly around your neck if you aren't using the hood",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Fringe falls out everywhere I go",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the functional side of a men’s zipper (the tab) is usually on the right; this is on the left",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Definitely not see through like most leggings.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Main zipper sux",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Horrible had a snag in it like how yall didn't see that before shipping it.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Don't dry! It shrank up to a toddler size!",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Fringe started falling out immediately.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the shedding. The fur on the inside gets every where",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "It was badly sewn and really just looked like a bad Halloween costume.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Patches were crooked on the elbows.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "it took 4 months to get to",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "This jacket does not do good in the rain if you are wondering",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Missing the capsule Corp patch.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Lint and pet hair gets imbedded in fabric.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "This vest has sub-standard zippers--on the vest itself and on both pockets",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Bloomers were a neon green and didn't go well with the top.",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Pills after first wash. The other reviews are accurate...the pilling on these is ridiculous.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Elbow patch in wrong place!",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "shedding"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "My daughter loves it",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Very durable, feel great.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "durability"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Exceeded expectations!",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "It is not see through, so there aren't any surprises if you bent over.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "I am very happy with this outfit",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Jacket is very light weight and cool.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "warmth"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "great quality. love the quality of the jacket.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "This is a very pretty and nice cycling shirt.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Length is good.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the length of the coat is awesome",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "you can feel the quality",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "The sweat shirt is super cute",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "they’re super warm for the Colorado winters",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "warmth"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "it is not as long as what it looks like in the picture.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "color_accuracy"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the zippers on BOTH coats were broken",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "durability"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "DO NOT BUY IF YOU ARE LOOKING FOR A WINTER JACKET",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "no instructions on how to care for it",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "durability"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Pretty but see through.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "color_accuracy"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the pockets are not real, the pockets look drawn on and really really fake",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "the outer shell is really thin, like almost see through thin",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "I want my money back!",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "I even wrote the company over a month ago to return the item and no one has gotten back to me yet",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "The material looks like it’s made in China",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Faded/painted over. The silver necklace seemed to be just a gold color that was painted over in silver. The charms were yellowed around the edges",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "color_accuracy"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "Listed as a sweatshirt, but it is actually a very thin tee shirt",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "털 안 빠지는 걸로",
+   "quote": "This sweater was thin",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I wear a 10/12 and the medium is a perfect fit.",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "It fit perfectly through the shoulders and the arms also fit perfectly.",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "They actually stay up and cover face",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "It fitted perfectly.",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I guess I will not need any thick sweaters and cardigans under this coat as it really feels very warm",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the XL is long enough for my arms",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "medium fits perfect.",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Returned and exchanged for the XL and it fits perfectly.",
+   "label": "skip",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I believe they are true to size.",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "it's long covers my butt",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "bigger than I anticipated",
+   "label": "against",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "The small/medium size fits her perfectly",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "THE SLEEVES ARE JUST ABOVE THE WRIST.",
+   "label": "skip",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Product is just as pictured",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "thankfully chose right size",
+   "label": "skip",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "If your a size 2 enjoy the 3x cute item",
+   "label": "against",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I do like that it’s a little baggy.. not too baggy though",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I like how it fits the bra band",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I ordered and received the 5X size.",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I ordered a medium and it fits snugly",
+   "label": "skip",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I ordered larger because I saw comments that the sizes run small",
+   "label": "against",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Love the colors and fit",
+   "label": "skip",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Easy to get on and off",
+   "label": "unrelated",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "large fits great",
+   "label": "supports",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "it runs a little but smaller",
+   "label": "against",
+   "extract_label": "supports",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the buttons were sewn out of place",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "shirt is great but runs very very small.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "It ran very small so I had to return it.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I don’t like to wear tight clothes",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Runs very small. Jacket made ok sized very small and took a long time to get",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Was at least a size too small in upper arms and across my shoulders",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I bought 3X, label said 3X, but it wasn't 3X. More like one X.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "it runs on the small side",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "way too big than picture",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Cheaply made and runs small.. Runs super small.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the second shirt, although also an XXL, was significantly smaller than the original",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Would be nice if the sizing was accurate.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Fits slightly too large but not by much",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "The sweater fits a little smaller than it claims to be I feel",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "To small not as thick as it looks on line.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Runs very small. Very cute shirt if your Asian. Ordered large and it was too short and too tight.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I ordered 2 sizes larger & it was still too small",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "One size fits all? no.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "This small is really small.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "It is however a wee bit to small.",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "expect shrinkage after washing",
+   "label": "skip",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Sizes are way off",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I had to buy one size up than I usually wear",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "It's not as long as I expected.. then again I didn't read the length first lol",
+   "label": "unrelated",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Runs really small",
+   "label": "against",
+   "extract_label": "against",
+   "extract_aspect": "sizing"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "My daughter loves it",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Very durable, feel great.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "durability"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Exceeded expectations!",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "It is not see through, so there aren't any surprises if you bent over.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I am very happy with this outfit",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Jacket is very light weight and cool.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "warmth"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "great quality. love the quality of the jacket.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "This is a very pretty and nice cycling shirt.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Length is good.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the length of the coat is awesome",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "comfort"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "you can feel the quality",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "The sweat shirt is super cute",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "they’re super warm for the Colorado winters",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "warmth"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "it is not as long as what it looks like in the picture.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "color_accuracy"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the zippers on BOTH coats were broken",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "durability"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "DO NOT BUY IF YOU ARE LOOKING FOR A WINTER JACKET",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "no instructions on how to care for it",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "durability"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Pretty but see through.",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "color_accuracy"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the pockets are not real, the pockets look drawn on and really really fake",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "the outer shell is really thin, like almost see through thin",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I want my money back!",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "I even wrote the company over a month ago to return the item and no one has gotten back to me yet",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "value"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "The material looks like it’s made in China",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Faded/painted over. The silver necklace seemed to be just a gold color that was painted over in silver. The charms were yellowed around the edges",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "color_accuracy"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "Listed as a sweatshirt, but it is actually a very thin tee shirt",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  },
+  {
+   "wish": "사이즈 정사이즈로 나오는",
+   "quote": "This sweater was thin",
+   "label": "unrelated",
+   "extract_label": "unrelated",
+   "extract_aspect": "material_quality"
+  }
+ ]
+}

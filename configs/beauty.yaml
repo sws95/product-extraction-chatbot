@@ -1,0 +1,36 @@
+domain: beauty
+category_file: Beauty_and_Personal_Care
+# 메타데이터 categories 목록에 하나라도 포함되면 남긴다 (실제 카테고리 이름은 데이터를 열어 확인)
+include_categories: ["Skin Care", "Makeup"]
+min_reviews: 20            # 구매 인증 리뷰가 이보다 적은 상품은 제외
+max_products: 1500
+max_reviews_per_product: 20     # 검색 인덱스에 넣는 리뷰 수 (임베딩은 빨라서 넉넉히)
+aspect_reviews_per_product: 8   # 그중 LLM으로 측면을 추출할 리뷰 수 (도움돼요 많은 순). 추출 시간을 좌우한다
+
+# 상품 정보 추출 스키마 (사실: 필터와 피처로 사용)
+product_attributes:
+  product_type:
+    type: enum
+    values: [moisturizer, cleanser, serum, sunscreen, toner, mask, eye_care, lip, foundation, other]
+  skin_type:
+    type: enum_list
+    values: [dry, oily, combination, sensitive, all]
+  fragrance:
+    type: enum
+    values: [fragrance_free, scented, unknown]
+  finish:
+    type: enum
+    values: [matte, dewy, natural, unknown]
+  key_ingredients:
+    type: text_list
+    max_items: 5
+
+# 리뷰 측면 추출 스키마 (평가: 검색 단위와 프로필 매칭에 사용)
+review_aspects: [moisturizing, irritation, breakouts, scent, texture, absorption, longevity, value, packaging]
+
+# 대화 조건으로 받고 검색 필터로 쓰는 속성
+aspect_labels: {moisturizing: 보습, irritation: 자극, breakouts: 트러블, scent: 향, texture: 제형, absorption: 흡수, longevity: 지속력, value: 가성비, packaging: 패키지}
+
+filter_fields: [product_type, skin_type, fragrance]
+# 결과가 부족할 때 먼저 푸는 순서
+relax_order: [fragrance, skin_type, product_type]
